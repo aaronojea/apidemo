@@ -2,8 +2,6 @@ package ad.apidemo.modelo;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity(name = "categorias")
 public class Categoria {
 
@@ -11,9 +9,6 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
     String nombre;
-
-    @OneToMany(mappedBy = "categoria")
-    private List<Recurso> recursos;
 
     public Categoria() {}
 
@@ -35,13 +30,5 @@ public class Categoria {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public List<Recurso> getRecursos() {
-        return recursos;
-    }
-
-    public void setRecursos(List<Recurso> recursos) {
-        this.recursos = recursos;
     }
 }
